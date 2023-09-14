@@ -4,20 +4,26 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vegetarian Restaurant</title>
-    <link href="script.js" defer />
+    <script src="script.js" defer></script>
     <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <header>
       <img class="logo-icon" src="./Icons/leaf.svg" />
-      <p>Your local Vegetarian Restaurant</p>
+      <p><b>Your local Vegetarian Restaurant</b></p>
     </header>
     <main class="main-div">
       <aside>
         <div class="location">
           <img class="other-icon" src="./Icons/store.svg" />
           <div class="adress">
-            <h4>Adress:</h4>
+            <h4>Address:</h4>
             <p>Imaginary Street 9 3/4 69-420 TownsVille</p>
           </div>
           <button>
@@ -36,7 +42,17 @@
           </div>
         </div>
       </aside>
-      <h2>Menu</h2>
+      <div class="menu-and-legend">
+        <h2>Menu</h2>
+        <ul class="legend">
+          <li><img class="legend-icon" src="./Icons/nuts.svg" />Peanuts</li>
+          <li><img class="legend-icon" src="./Icons/gluten.svg" />Gluten</li>
+          <li><img class="legend-icon" src="./Icons/sugar.svg" />Sugar</li>
+          <li>
+            <img class="legend-icon green" src="./Icons/vegan.svg" />100% Vegan
+          </li>
+        </ul>
+      </div>
       <article>
         <div class="time-of-day">
           <button>
@@ -49,23 +65,32 @@
             <img class="time-icon" src="./Icons/evening.svg" />
           </button>
         </div>
-        <div class="ingredience-selectors">
-          <button>
-            <img class="ingredience-icon" src="./Icons/nuts.svg" />
-            <img class="ingredience-icon" src="./Icons/no-nuts.svg" />
+        <div class="ingredients-selectors">
+          <button id="peanuts" class="ingredient-selector">
+            <img class="ingredient-icon" src="./Icons/nuts.svg" />
+            <img class="ingredient-icon invisible" src="./Icons/no-nuts.svg" />
           </button>
-          <button>
-            <img class="ingredience-icon" src="./Icons/gluten.svg" />
-            <img class="ingredience-icon" src="./Icons/no-gluten.svg" />
+          <button id="gluten" class="ingredient-selector">
+            <img class="ingredient-icon" src="./Icons/gluten.svg" />
+            <img
+              class="ingredient-icon invisible"
+              src="./Icons/no-gluten.svg"
+            />
           </button>
-          <button>
-            <img class="ingredience-icon" src="./Icons/sugar.svg" />
-            <img class="ingredience-icon" src="./Icons/no-sugar.svg" />
+          <button id="sugar" class="ingredient-selector">
+            <img class="ingredient-icon" src="./Icons/sugar.svg" />
+            <img class="ingredient-icon invisible" src="./Icons/no-sugar.svg" />
           </button>
-          <button>
-            <img class="ingredience-icon" src="./Icons/vegan.svg" />
-            <img class="ingredience-icon" src="./Icons/no-vegan.svg" />
+          <button id="vegan" class="ingredient-selector">
+            <img
+              class="ingredient-icon green invisible"
+              src="./Icons/vegan.svg"
+            />
+            <img class="ingredient-icon" src="./Icons/no-vegan.svg" />
           </button>
+        </div>
+        <div class="dishes">
+          <div class="dish-card"></div>
         </div>
       </article>
     </main>
