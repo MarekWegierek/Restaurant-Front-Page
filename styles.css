@@ -31,6 +31,7 @@ header {
   align-items: center;
   padding-left: 10px;
   padding-right: 10px;
+  z-index: 1;
 }
 
 header p {
@@ -146,4 +147,55 @@ article {
 .green {
   filter: invert(75%) sepia(7%) saturate(1097%) hue-rotate(95deg)
     brightness(84%) contrast(91%);
+}
+
+/*Dish Card Container & Dish Cards*/
+
+.dishes {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.dish-card {
+  width: 200px;
+  height: 300px;
+  margin: 10px;
+  background-color: var(--dark-green);
+  border: 4px solid black;
+  border-radius: 5px;
+  background-clip: padding-box;
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+}
+
+.dish-card-serving-time,
+.dish-card-ingredients {
+  text-align: right;
+}
+
+.dish-card-img {
+  height: 50%;
+  width: 100%;
+}
+
+.dish-card h4 {
+  margin-left: 3px;
+}
+
+.dish-card-icon {
+  height: 25px;
+}
+
+.dish-card-ingredient h5 {
+  margin-left: 2px;
+  margin-bottom: 2px;
+}
+
+.dish-card-ingredients-list {
+  background-color: var(--pastel);
+  padding: 3px;
 }

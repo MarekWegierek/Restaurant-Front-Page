@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vegetarian Restaurant</title>
-    <script src="script.js" defer></script>
+    <script src="script.js" type="module" defer></script>
     <link rel="stylesheet" href="styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -49,6 +49,9 @@
           <li><img class="legend-icon" src="./Icons/gluten.svg" />Gluten</li>
           <li><img class="legend-icon" src="./Icons/sugar.svg" />Sugar</li>
           <li>
+            <img class="legend-icon" src="./Icons/no-vegan.svg" />Vegetarian
+          </li>
+          <li>
             <img class="legend-icon green" src="./Icons/vegan.svg" />100% Vegan
           </li>
         </ul>
@@ -89,9 +92,8 @@
             <img class="ingredient-icon" src="./Icons/no-vegan.svg" />
           </button>
         </div>
-        <div class="dishes">
-          <div class="dish-card"></div>
-        </div>
+
+        <div class="dishes"></div>
       </article>
     </main>
   </body>
