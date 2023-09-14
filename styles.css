@@ -1,0 +1,79 @@
+:root {
+  --main-green: #c8e4b2;
+  --middle-green: #9ed2be;
+  --dark-green: #7eaa92;
+  --pastel: #ffd9b7;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  text-decoration: none;
+  list-style: none;
+}
+
+body {
+  background-color: var(--middle-green);
+}
+
+header {
+  height: 60px;
+  width: 100vw;
+  background-color: var(--dark-green);
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+}
+main {
+  background-color: var(--main-green);
+  margin: 70px auto 10px auto;
+  width: 70vw;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/*Main-div above menu*/
+
+aside {
+  background-color: var(--pastel);
+  padding-top: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border: 1px solid purple;
+}
+
+.location {
+  display: flex;
+  flex-basis: 40%;
+  align-items: center;
+  gap: 5%;
+}
+
+.opening-hours {
+  text-align: center;
+}
+
+/*Menu and below*/
+
+article {
+  border: 2px solid red;
+}
+
+/*Icons*/
+.time-icon,
+.ingredience-icon,
+.logo-icon,
+.other-icon {
+  height: 50px;
+  width: 50px;
+}
