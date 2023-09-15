@@ -21,14 +21,22 @@
     <main class="main-div">
       <aside>
         <div class="location">
-          <img class="other-icon" src="./Icons/store.svg" />
-          <div class="adress">
-            <h4>Address:</h4>
-            <p>Imaginary Street 9 3/4 69-420 TownsVille</p>
+          <div class="address">
+            <img class="other-icon" src="./Icons/store.svg" />
+            <div class="address-info">
+              <h4>Address:</h4>
+              <p>Imaginary Street 9 3/4 69-420 TownsVille</p>
+            </div>
           </div>
-          <button>
-            Show me on map:<img class="other-icon" src="./Icons/location.svg" />
-          </button>
+          <a
+            href="https://www.google.pl/maps/place/Zdrowe+Ciacho/@52.2300469,21.0766918,17z/data=!4m6!3m5!1s0x471ecd9f51a262b5:0x381ba0cf02b1dfb5!8m2!3d52.230047!4d21.078677!16s%2Fg%2F11d_bhjlx0?entry=ttu"
+            target="_blank"
+            ><button class="location-btn">
+              Show me on map:<img
+                class="other-icon"
+                src="./Icons/location.svg"
+              /></button
+          ></a>
         </div>
         <div class="opening-hours">
           <h4>Opening Hours</h4>
@@ -85,15 +93,41 @@
             <img class="ingredient-icon invisible" src="./Icons/no-sugar.svg" />
           </button>
           <button id="vegan" class="ingredient-selector">
-            <img
-              class="ingredient-icon green invisible"
-              src="./Icons/vegan.svg"
-            />
-            <img class="ingredient-icon" src="./Icons/no-vegan.svg" />
+            <img class="ingredient-icon green" src="./Icons/vegan.svg" />
+            <img class="ingredient-icon invisible" src="./Icons/no-vegan.svg" />
           </button>
         </div>
 
-        <div class="dishes"></div>
+        <div class="dishes">
+          <div class="dish-card">
+            <div class="dish-card-header">
+              <img
+                class="dish-card-header-img"
+                src="https://www.jadlonomia.com/wp-content/uploads/2019/09/IMG_9623_male-600x900.jpg"
+              />
+              <h4>Vegan Pancakes</h4>
+            </div>
+            <div class="dish-card-icons">
+              <div class="dish-card-serving-time">
+                <img class="dish-card-icon" src="./Icons/sunrise.svg" />
+                <img class="dish-card-icon" src="./Icons/day.svg" />
+                <img class="dish-card-icon" src="./Icons/evening.svg" />
+              </div>
+              <div class="dish-card-ingredients">
+                <img class="dish-card-icon" src="./Icons/nuts.svg" />
+                <img class="dish-card-icon" src="./Icons/gluten.svg" />
+                <img class="dish-card-icon" src="./Icons/sugar.svg" />
+                <img class="dish-card-icon" src="./Icons/vegan.svg" />
+              </div>
+            </div>
+            <div class="dish-card-ingredient">
+              <h5>Ingredients:</h5>
+              <p class="dish-card-ingredients-list">
+                ass,ass,ass,ass,ass,ass ass,ass,ass,ass,ass
+              </p>
+            </div>
+          </div>
+        </div>
       </article>
     </main>
   </body>
