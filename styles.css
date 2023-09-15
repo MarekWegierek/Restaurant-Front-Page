@@ -30,7 +30,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding-left: 10px;
-  padding-right: 10px;
+  padding-right: 30px;
   z-index: 1;
 }
 
@@ -57,16 +57,26 @@ aside {
   padding-top: 10px;
   width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  padding: 10px 20px;
   align-items: center;
   border: 1px solid purple;
 }
 
 .location {
   display: flex;
-  flex-basis: 40%;
   align-items: center;
+  justify-content: center;
   gap: 5%;
+}
+
+.address {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.address-info {
+  width: 135px;
 }
 
 .opening-hours {
@@ -125,8 +135,8 @@ article {
 .ingredient-icon,
 .logo-icon,
 .other-icon {
-  height: 50px;
-  width: 50px;
+  height: 40px;
+  width: 40px;
 }
 
 .legend-icon {
@@ -159,17 +169,53 @@ article {
   margin-top: 10px;
 }
 
+/*Dish Card*/
 .dish-card {
-  width: 200px;
   height: 300px;
+  width: 200px;
   margin: 10px;
-  background-color: var(--dark-green);
-  border: 4px solid black;
+  border: 3px solid black;
   border-radius: 5px;
-  background-clip: padding-box;
+  background-color: var(--dark-green);
   display: flex;
   flex-direction: column;
-  align-content: space-between;
+  justify-content: space-between;
+}
+
+.dish-card-header {
+  height: 60%;
+}
+.dish-card-header-img {
+  height: 90%;
+  width: 100%;
+}
+
+.dish-card-header,
+.dish-card-icons,
+.dish-card-ingredient {
+  width: 100%;
+}
+
+.dish-card-icon {
+  height: 25px;
+  width: 25px;
+}
+
+.dish-card-ingredient {
+  height: 20%;
+  padding: 2px;
+  background-color: var(--pastel);
+}
+
+.dish-card-ingredients-list {
+  height: 70%;
+  overflow: hidden;
+}
+
+.dish-card-ingredients-list:hover {
+  overflow: visible;
+  height: 100%;
+  background-color: var(--pastel);
 }
 
 .dish-card-serving-time,
@@ -177,25 +223,22 @@ article {
   text-align: right;
 }
 
-.dish-card-img {
-  height: 50%;
-  width: 100%;
+/*Media Queries*/
+
+@media only screen and (max-width: 1536px) {
+  .main-div {
+    width: 90vw;
+  }
+  article {
+    width: 80%;
+  }
 }
 
-.dish-card h4 {
-  margin-left: 3px;
-}
-
-.dish-card-icon {
-  height: 25px;
-}
-
-.dish-card-ingredient h5 {
-  margin-left: 2px;
-  margin-bottom: 2px;
-}
-
-.dish-card-ingredients-list {
-  background-color: var(--pastel);
-  padding: 3px;
+@media only screen and (max-width: 1280px) {
+  .main-div {
+    width: 100vw;
+  }
+  article {
+    width: 90%;
+  }
 }
