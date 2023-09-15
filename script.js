@@ -2,8 +2,10 @@ const ingredientSelector = document.querySelectorAll(".ingredient-selector")
 const cardsOfDishes = document.querySelector(".dishes")
 import dishList from "./dishList.js"
 
-let forbiddenIngredients = []
-let isVegan = false
+let havePeanuts = true
+let haveGluten = true
+let haveSugar = true
+let isVegan = true
 
 /*Ingredients filter */
 
@@ -12,40 +14,50 @@ ingredientSelector.forEach((button) => {
     button.children[0].classList.toggle("invisible")
     button.children[1].classList.toggle("invisible")
 
-    if (button.id !== "vegan") {
-      if (!forbiddenIngredients.includes(button.id)) {
-        forbiddenIngredients.push(button.id)
-      } else {
-        forbiddenIngredients = forbiddenIngredients.filter(
-          (item) => item !== button.id
-        )
-      }
-      console.log(forbiddenIngredients)
-    } else {
-      isVegan = !isVegan
-      console.log(isVegan)
+    switch (button.id) {
+      case "peanuts":
+        havePeanuts = !havePeanuts
+        break
+      case "gluten":
+        haveGluten = !haveGluten
+        break
+      case "sugar":
+        haveSugar = !haveSugar
+        break
+      case "vegan":
+        isVegan = !isVegan
+        break
     }
-  })
-})
-/*End of Ingredients filter */
+    let menuList = dishList.map((card) => {
+      let { img, title, ingredientsList } = card
 
-/*Creating cards with dishes */
-
-let menuList = dishList.map((card) => {
-  let { img, title, ingredientsList } = card
-  return `<div class="dish-card">
-            <img class="dish-card-img" src=${img} />
-            <h4>${title}</h4>
-            <div class="dish-card-serving-time">
-              <img class="dish-card-icon" src="./Icons/sunrise.svg" />
-              <img class="dish-card-icon" src="./Icons/day.svg" />
-              <img class="dish-card-icon" src="./Icons/evening.svg" />
+      if (
+        card.isVegan == isVegan &&
+        card.havePeanuts == havePeanuts &&
+        card.haveGluten == haveGluten &&
+        card.haveSugar == haveSugar
+      ) {
+        return `
+        <div class="dish-card">
+            <div class="dish-card-header">
+              <img
+                class="dish-card-header-img"
+                src="${img}"
+              />
+              <h4>${title}</h4>
             </div>
-            <div class="dish-card-ingredients">
-              <img class="dish-card-icon" src="./Icons/nuts.svg" />
-              <img class="dish-card-icon" src="./Icons/gluten.svg" />
-              <img class="dish-card-icon" src="./Icons/sugar.svg" />
-              <img class="dish-card-icon" src="./Icons/vegan.svg" />
+            <div class="dish-card-icons">
+              <div class="dish-card-serving-time">
+                <img class="dish-card-icon" src="./Icons/sunrise.svg" />
+                <img class="dish-card-icon" src="./Icons/day.svg" />
+                <img class="dish-card-icon" src="./Icons/evening.svg" />
+              </div>
+              <div class="dish-card-ingredients">
+                <img class="dish-card-icon" src="./Icons/nuts.svg" />
+                <img class="dish-card-icon" src="./Icons/gluten.svg" />
+                <img class="dish-card-icon" src="./Icons/sugar.svg" />
+                <img class="dish-card-icon" src="./Icons/vegan.svg" />
+              </div>
             </div>
             <div class="dish-card-ingredient">
               <h5>Ingredients:</h5>
@@ -53,7 +65,48 @@ let menuList = dishList.map((card) => {
                 ${ingredientsList.join(", ")}
               </p>
             </div>
-          </div>`
+          </div>
+        `
+      }
+    })
+    cardsOfDishes.innerHTML = menuList.join("")
+  })
 })
+/*End of Ingredients filter */
 
+/*Creating cards with dishes */
+let menuList = dishList.map((card) => {
+  let { img, title, ingredientsList } = card
+
+  return `
+          <div class="dish-card">
+            <div class="dish-card-header">
+              <img
+                class="dish-card-header-img"
+                src="${img}"
+              />
+              <h4>${title}</h4>
+            </div>
+            <div class="dish-card-icons">
+              <div class="dish-card-serving-time">
+                <img class="dish-card-icon" src="./Icons/sunrise.svg" />
+                <img class="dish-card-icon" src="./Icons/day.svg" />
+                <img class="dish-card-icon" src="./Icons/evening.svg" />
+              </div>
+              <div class="dish-card-ingredients">
+                <img class="dish-card-icon" src="./Icons/nuts.svg" />
+                <img class="dish-card-icon" src="./Icons/gluten.svg" />
+                <img class="dish-card-icon" src="./Icons/sugar.svg" />
+                <img class="dish-card-icon" src="./Icons/vegan.svg" />
+              </div>
+            </div>
+            <div class="dish-card-ingredient">
+              <h5>Ingredients:</h5>
+              <p class="dish-card-ingredients-list">
+                ${ingredientsList.join(", ")}
+              </p>
+            </div>
+          </div>
+        `
+})
 cardsOfDishes.innerHTML = menuList.join("")
